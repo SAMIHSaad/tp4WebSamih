@@ -17,7 +17,7 @@ public class LlmClient {
 
         this.model = GoogleAiGeminiChatModel.builder()
                 .apiKey(apiKey)
-                .modelName("gemini-1.5-flash")
+                .modelName("gemini-2.5-flash")
                 .build();
     }
 
@@ -31,7 +31,7 @@ public class LlmClient {
         if (prompt == null || prompt.trim().isEmpty()) {
             return "Prompt cannot be empty.";
         }
-        return model.generate(prompt);
+        return model.chat(prompt);
     }
 
     /**
